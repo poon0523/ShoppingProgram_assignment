@@ -2,7 +2,10 @@ require_relative "shopping_app/seller"
 require_relative "shopping_app/item"
 require_relative "shopping_app/customer"
 
+# 販売者の情報を登録
 seller = Seller.new("DICストア")
+
+# 販売する商品を商品リストに登録
 10.times{ Item.new("CPU", 40830, seller) }
 10.times{ Item.new("メモリー", 13880, seller) }
 10.times{ Item.new("マザーボード", 28980, seller) }
@@ -13,6 +16,7 @@ seller = Seller.new("DICストア")
 10.times{ Item.new("M.2 SSD", 12980, seller) }
 10.times{ Item.new("CPUクーラー", 13400, seller) }
 10.times{ Item.new("グラフィックボード", 23800, seller) }
+
 
 puts "🤖 あなたの名前を教えてください"
 customer = Customer.new(gets.chomp)

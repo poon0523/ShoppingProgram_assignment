@@ -1,4 +1,8 @@
+require_relative "ownable"
+
 class Wallet
+  include Ownable
+
   attr_reader :balance
 
   def initialize(owner)
@@ -15,5 +19,4 @@ class Wallet
     @balance -= amount.to_i
     amount
   end
-
 end

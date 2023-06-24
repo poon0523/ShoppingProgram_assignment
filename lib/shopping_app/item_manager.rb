@@ -9,7 +9,9 @@ module ItemManager
   end
 
   def pick_items(number, quantity) # numberと対応した自身の所有するItemインスタンスを指定されたquantitiy分返します。
+    # 選択した商品番号と対応するデータをstock（在庫）から探し、キー「items」の値を取得しローカル変数「items」に格納する
     items = stock.find{|stock| stock[:number] == number }&.dig(:items)
+    # もしitemsにデータがない（在庫がない）もしくは　指定した量が存在する量を超えている場合はitemインスタンスを返さないようにする
     return if items.nil? || items.size < quantity
     items.slice(0, quantity)
   end
